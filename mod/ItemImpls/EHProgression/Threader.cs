@@ -23,9 +23,9 @@ internal class Threader
 
     public static void AddThreaders()
     {
-        APRandomizer.OWMLModConsole.WriteLine("Attempting to add the threader");
         if (areThreadersAdded) return;
         if (APRandomizer.NewHorizonsAPI == null) return;
+        if (!APRandomizer.Instance.ModHelper.Interaction.ModExists("Trifid.TrifidJam3")) return;
         void AddThreader(string planet, float posX, float posY, float posZ, float rotX, float rotY, float rotZ)
         {
             // Use FormattableString to apply interpolation with invariant culture (ensures the decimal separator to be dot).
@@ -61,6 +61,7 @@ internal class Threader
     public static void UpdateThreaders()
     {
         if (APRandomizer.NewHorizonsAPI == null) return;
+        if (!APRandomizer.Instance.ModHelper.Interaction.ModExists("Trifid.TrifidJam3")) return;
         switch (APRandomizer.NewHorizonsAPI.GetCurrentStarSystem())
         {
             case "Jam3":
