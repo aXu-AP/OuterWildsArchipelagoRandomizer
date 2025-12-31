@@ -382,6 +382,7 @@ internal class LocationTriggers
             case Item.MagistariumLibraryAccessCode: MagistariumAccessCodes.hasLibraryAccess = (count > 0); break;
             case Item.MagistariumDormitoryAccessCode: MagistariumAccessCodes.hasDormitoriesAccess = (count > 0); break;
             case Item.MagistariumEngineAccessCode: MagistariumAccessCodes.hasEngineAccess = (count > 0); break;
+            case Item.Threader: Threader.hasThreader = (count > 0); break;
 
             // for backwards-compatibility
             case Item.Spaceship: break; case Item.Nothing: break;

@@ -66,13 +66,25 @@ public class StoryModMetadata
         trackerCategoryImageFile = "FretsQuest",
         trackerLocationInfosFilePrefix = "FQ",
     };
+    private static ModMetadata EHMetadata = new ModMetadata
+    {
+        trackerCategoryName = "Echo Hike",
+        modManagerUniqueName = "Trifid.TrifidJam3",
+        slotDataOption = "enable_eh_mod",
+        logicCategory = "eh",
+        // copy-pasted https://github.com/Samster68OW/fretsquest/blob/main/old_subtitle.png and put it on top of
+        // https://github.com/Samster68OW/fretsquest/blob/main/planets/ShipLogs/icons/UI_Magic_Banjo.png
+        trackerCategoryImageFile = "FretsQuest",
+        trackerLocationInfosFilePrefix = "EH",
+    };
 
     public static ModMetadata[] AllStoryMods = {
         OutsiderMetadata,
         ACMetadata,
         HN1Metadata,
         HN2Metadata,
-        FQMetadata
+        FQMetadata,
+        EHMetadata,
     };
 
     // The order of this dictionary determines the order of story mod tracker categories the user sees
@@ -83,6 +95,7 @@ public class StoryModMetadata
         { TrackerCategory.HearthsNeighbor, HN1Metadata },
         { TrackerCategory.HearthsNeighbor2Magistarium, HN2Metadata },
         { TrackerCategory.FretsQuest, FQMetadata },
+        { TrackerCategory.EchoHike, EHMetadata },
     };
 
     public static Dictionary<string, ModMetadata> LogicCategoryToModMetadata = AllStoryMods.ToDictionary(mod => mod.logicCategory);
