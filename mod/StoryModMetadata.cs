@@ -72,9 +72,8 @@ public class StoryModMetadata
         modManagerUniqueName = "Trifid.TrifidJam3",
         slotDataOption = "enable_eh_mod",
         logicCategory = "eh",
-        // copy-pasted https://github.com/Samster68OW/fretsquest/blob/main/old_subtitle.png and put it on top of
-        // https://github.com/Samster68OW/fretsquest/blob/main/planets/ShipLogs/icons/UI_Magic_Banjo.png
-        trackerCategoryImageFile = "FretsQuest",
+        // copy-pasted from https://github.com/TerrificTrifid/ow-nh-trifidjam3/blob/fbd158fff0e78f27953f70ab3fb588ddaa218a47/TrifidJam3/planets/Echo%20Hike.png
+        trackerCategoryImageFile = "EchoHike",
         trackerLocationInfosFilePrefix = "EH",
     };
 
