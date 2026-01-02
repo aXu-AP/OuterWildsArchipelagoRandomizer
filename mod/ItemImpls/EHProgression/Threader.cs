@@ -26,14 +26,14 @@ internal class Threader
         if (areThreadersAdded) return;
         if (APRandomizer.NewHorizonsAPI == null) return;
         if (!APRandomizer.Instance.ModHelper.Interaction.ModExists("Trifid.TrifidJam3")) return;
-        void AddThreader(string planet, float posX, float posY, float posZ, float rotX, float rotY, float rotZ)
+        void AddThreader(string planet, float posX, float posY, float posZ, float rotX, float rotY, float rotZ, string starSystem = "SolarSystem")
         {
             // Use FormattableString to apply interpolation with invariant culture (ensures the decimal separator to be dot).
             FormattableString config = $$"""
             {
                 "name": "{{planet}}",
                 "$schema": "https://raw.githubusercontent.com/Outer-Wilds-New-Horizons/new-horizons/main/NewHorizons/Schemas/body_schema.json",
-                "starSystem": "SolarSystem",
+                "starSystem": "{{starSystem}}",
                 "Props": {
                         "details": [
                             {
@@ -55,6 +55,8 @@ internal class Threader
         AddThreader("Brittle Hollow", -33.8987f, 4.4243f, 279.8854f, 336.3344f, 346.9767f, 245.6233f);
         AddThreader("StatueIsland", 6.8373f, 32.6154f, -25.1648f, 330.509f, 119.5316f, 251.5381f);
         AddThreader("RINGWORLD", 45.0617f, -123.6726f, -290.0204f, 306.7843f, 83.1867f, 318.7848f);
+        if (!APRandomizer.Instance.ModHelper.Interaction.ModExists("GameWyrm.HearthsNeighbor")) return;
+            AddThreader("LonelyHermit", 59.8121f, 14.2851f, 274.7672f, 287.8107f, 127.3934f, 85.9663f, "GameWyrm.HearthsNeighbor");
         areThreadersAdded = true;
     }
 
@@ -73,6 +75,9 @@ internal class Threader
                 GameObject.Find("RingWorld_Body/Sector_RingWorld/Grapple").SetActive(hasThreader);
                 GameObject.Find("StatueIsland_Body/Sector_StatueIsland/Grapple").SetActive(hasThreader);
                 GameObject.Find("TimberHearth_Body/Sector_TH/Grapple").SetActive(hasThreader);
+                break;
+            case "GameWyrm.HearthsNeighbor":
+                GameObject.Find("LonelyHermit_Body/Sector/Grapple").SetActive(hasThreader);
                 break;
         }
     }
