@@ -63,6 +63,7 @@ public class APRandomizer : ModBehaviour
     public static TrackerManager Tracker;
     public static LocationScouter LocationScouter;
     public static INewHorizons? NewHorizonsAPI = null;
+    public static ShipEnhancements.IShipEnhancements? ShipEnhancementsAPI = null;
 
     public static bool IsVanillaSystemLoaded() =>
         LoadManager.GetCurrentScene() == OWScene.SolarSystem &&
@@ -267,6 +268,12 @@ public class APRandomizer : ModBehaviour
 
         if (SlotData.ContainsKey("warps"))
             WarpPlatforms.ApplySlotData(SlotData["warps"]);
+
+        if (SlotData.ContainsKey("enable_se_mod") && (long)SlotData["enable_se_mod"] == 1)
+        {
+            APRandomizer.OWMLModConsole.WriteLine($"{SlotData["enable_se_mod"].GetType()}: {SlotData["enable_se_mod"]}");
+            ShipEnhancementItems.InitializeSettings();
+        }
 
         Translator.splitTranslator = SlotEnabledSplitTranslator();
 
@@ -535,6 +542,8 @@ public class APRandomizer : ModBehaviour
             // Adds a prerequisite to warping out of the Deep Bramble, for the Deep Bramble Spawn.
             DeepBrambleCoordinates.ChangeExitWarp();
         }
+        
+        ShipEnhancementsAPI = ModHelper.Interaction.TryGetModApi<ShipEnhancements.IShipEnhancements>("Etherpod.ShipEnhancements");
     }
 
     // There's an important distinction here between your *initial* spawn at the start of a New/Resume (Random) Expedition,

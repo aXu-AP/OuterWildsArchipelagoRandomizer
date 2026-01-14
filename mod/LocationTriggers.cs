@@ -440,6 +440,33 @@ internal class LocationTriggers
             case Item.ProbabilityRule: QuantumProbability.hasProbabilityKnowledge = (count > 0); break;
             case Item.DeepBrambleCoordinates: DeepBrambleCoordinates.HasDeepBrambleCoordinates = (count > 0); break;
             case Item.Threader: Threader.hasThreader = (count > 0); break;
+            case Item.SignalShip: ShipEnhancementItems.hasSignalShip = (count > 0); break;
+            case Item.PortableCampfire: ShipEnhancementItems.hasPortableCampfire = (count > 0); break;
+            case Item.PortableTractorBeam: ShipEnhancementItems.hasPortableTractorBeam = (count > 0); break;
+            case Item.PortableFuelCanister: ShipEnhancementItems.hasPortableFuelCanister = (count > 0); break;
+            case Item.RepairWrench: ShipEnhancementItems.hasRepairWrench = (count > 0); break;
+            case Item.Tether: ShipEnhancementItems.hasTether = (count > 0); break;
+            case Item.ResourcePump: ShipEnhancementItems.hasResourcePump = (count > 0); break;
+            case Item.GravityLandingGear: ShipEnhancementItems.hasGravityLandingGear = (count > 0); break;
+            case Item.ThrustModulator: ShipEnhancementItems.hasThrustModulator = (count > 0); break;
+            case Item.ShipLights: ShipEnhancementItems.hasShipLights = (count > 0); break;
+            case Item.GravityCrystal: ShipEnhancementItems.gravityCrystalLevel = count; break;
+            case Item.Headlights: ShipEnhancementItems.headlightsLevel = count; break;
+            case Item.DamageIndicators: ShipEnhancementItems.hasDamageIndicators = (count > 0); break;
+            case Item.Seatbelt: ShipEnhancementItems.hasSeatbelt = (count > 0); break;
+            case Item.Medkit: ShipEnhancementItems.hasMedkit = (count > 0); break;
+            case Item.Hatch: ShipEnhancementItems.hasHatch = (count > 0); break;
+            case Item.ShipTractorBeam: ShipEnhancementItems.hasShipTractorBeam = (count > 0); break;
+            case Item.ShipOxygenCapacityUpgrade: ShipEnhancementItems.shipOxygenCapacityUpgrades = count; break;
+            case Item.ShipFuelCapacityUpgrade: ShipEnhancementItems.shipFuelCapacityUpgrades = count; break;
+            case Item.HullReinforcement: ShipEnhancementItems.hasHullReinforcement = (count > 0); break;
+            case Item.LessBrokenShip: ShipEnhancementItems.lessBrokenShipLevel = count; break;
+            case Item.AutomaticShipOxygenIntake: ShipEnhancementItems.hasAutomaticShipOxygenIntake = (count > 0); break;
+            case Item.MinimapMarkers: ShipEnhancementItems.hasMinimapMarkers = (count > 0); break;
+            case Item.ExpeditionFlag: ShipEnhancementItems.hasExpeditionFlag = (count > 0); break;
+            case Item.Radio: ShipEnhancementItems.hasRadio = (count > 0); break;
+            case Item.Clock: ShipEnhancementItems.hasClock = (count > 0); break;
+            case Item.Ernesto: ShipEnhancementItems.hasErnesto = (count > 0); break;
 
             // for backwards-compatibility
             case Item.Spaceship: break; case Item.Nothing: break;

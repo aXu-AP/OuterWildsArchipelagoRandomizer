@@ -86,6 +86,15 @@ public class StoryModMetadata
         trackerCategoryImageFile = "EchoHike",
         trackerLocationInfosFilePrefix = "EH",
     };
+    private static ModMetadata SEMetadata = new ModMetadata
+    {
+        trackerCategoryName = "Ship Enhancements",
+        modManagerUniqueName = "Etherpod.ShipEnhancements",
+        slotDataOption = "enable_se_mod",
+        logicCategory = "se",
+        trackerCategoryImageFile = "",
+        trackerLocationInfosFilePrefix = "SE",
+    };
 
     public static ModMetadata[] AllStoryMods = {
         OutsiderMetadata,
@@ -95,6 +104,7 @@ public class StoryModMetadata
         FQMetadata,
         FCMetadata,
         EHMetadata,
+        SEMetadata,
     };
 
     // The order of this dictionary determines the order of story mod tracker categories the user sees

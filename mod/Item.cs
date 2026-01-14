@@ -136,6 +136,42 @@ public enum Item
 
     // Echo Hike items
     Threader,
+
+    // Ship Enhancements items
+    // Useful
+    AdvancedAutopilot,
+    SignalShip,
+    PortableCampfire,
+    PortableTractorBeam,
+    PortableFuelCanister,
+    RepairWrench,
+    Tether,
+    ResourcePump,
+    ShipWarpCore,
+    GravityLandingGear,
+    ThrustModulator,
+    ShipLights,
+    // Hazards (items mitigate non-vanilla problems)
+    ScoutRetrieval,
+    GravityCrystal,
+    Headlights,
+    DamageIndicators,
+    Seatbelt,
+    Medkit,
+    Hatch,
+    ShipTractorBeam,
+    ShipOxygenCapacityUpgrade,
+    ShipFuelCapacityUpgrade,
+    HullReinforcement,
+    LessBrokenShip,
+    AutomaticShipOxygenIntake,
+    MinimapMarkers,
+    // Decorative
+    ExtraEjectButtons,
+    ExpeditionFlag,
+    Radio,
+    Clock,
+    Ernesto,
 };
 
 public static class ItemNames
@@ -277,6 +313,39 @@ public static class ItemNames
 
         // Echo Hike items
         { Item.Threader, "Threader" },
+
+        // Ship Enhancements items
+        { Item.ScoutRetrieval, "Scout Retrieval" },
+        { Item.AdvancedAutopilot, "Advanced Autopilot" },
+        { Item.ExtraEjectButtons, "Extra Eject Buttons" },
+        { Item.SignalShip, "Ship Signal" },
+        { Item.PortableCampfire, "Portable Campfire" },
+        { Item.PortableTractorBeam, "Portable Tractor Beam" },
+        { Item.PortableFuelCanister, "Portable Fuel Canister" },
+        { Item.RepairWrench, "Repair Wrench" },
+        { Item.Tether, "Tether" },
+        { Item.ResourcePump, "Resource Pump" },
+        { Item.ShipWarpCore, "Ship Warp Core" },
+        { Item.GravityLandingGear, "Gravity Landing Gear" },
+        { Item.ThrustModulator, "Thrust Modulator" },
+        { Item.ShipLights, "Ship Lights" },
+        { Item.GravityCrystal, "Progressive Gravity Crystal" },
+        { Item.Headlights, "Progressive Headlights" },
+        { Item.DamageIndicators, "Damage Indicators" },
+        { Item.Seatbelt, "Seatbelt" },
+        { Item.Medkit, "Medkit" },
+        { Item.Hatch, "Hatch" },
+        { Item.ShipTractorBeam, "Ship Tractor Beam" },
+        { Item.ShipOxygenCapacityUpgrade, "Ship Oxygen Capacity Upgrade" },
+        { Item.ShipFuelCapacityUpgrade, "Ship Fuel Capacity Upgrade" },
+        { Item.HullReinforcement, "Hull Reinforcement" },
+        { Item.LessBrokenShip, "Less Broken Ship" },
+        { Item.AutomaticShipOxygenIntake, "Automatic Ship Oxygen Intake" },
+        { Item.MinimapMarkers, "Minimap Markers" },
+        { Item.ExpeditionFlag, "Expedition Flag" },
+        { Item.Radio, "Radio" },
+        { Item.Clock, "Clock" },
+        { Item.Ernesto, "Ernesto" },
     };
 
     public static Dictionary<string, Item> itemNamesReversed = itemNames.ToDictionary(itemName => itemName.Value, itemName => itemName.Key);
