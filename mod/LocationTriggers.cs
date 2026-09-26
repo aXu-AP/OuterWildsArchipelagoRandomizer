@@ -373,107 +373,85 @@ internal class LocationTriggers
             SignalsAndFrequencies.SetSignalUsable(ItemNames.itemToSignal[item], count > 0);
             return;
         }
-
-        switch (item)
+        else if (ShipEnhancementItems.SEItems.Contains(item))
         {
-            case Item.LaunchCodes: LaunchCodes.hasLaunchCodes = (count > 0); break;
-            case Item.Spacesuit: Spacesuit.hasSpacesuit = (count > 0); break;
-            case Item.Translator: Translator.hasRegularTranslator = (count > 0); break;
-            case Item.TranslatorHGT: Translator.hasHGTTranslator = (count > 0); break;
-            case Item.TranslatorTH: Translator.hasTHTranslator = (count > 0); break;
-            case Item.TranslatorBH: Translator.hasBHTranslator = (count > 0); break;
-            case Item.TranslatorGD: Translator.hasGDTranslator = (count > 0); break;
-            case Item.TranslatorDB: Translator.hasDBTranslator = (count > 0); break;
-            case Item.TranslatorOther: Translator.hasOtherTranslator = (count > 0); break;
-            case Item.TranslatorDeepB: Translator.hasDeepBTranslator = (count > 0); break;
-            case Item.Signalscope: SignalscopeManager.hasSignalscope = (count > 0); break;
-            case Item.Scout: Scout.hasScout = (count > 0); break;
-            case Item.CameraGM: GhostMatterWavelength.hasGhostMatterKnowledge = (count > 0); break;
-            case Item.CameraQuantum: QuantumImaging.hasImagingKnowledge = (count > 0); break;
-            case Item.WarpPlatformCodes: WarpPlatforms.hasNomaiWarpCodes = (count > 0); break;
-            case Item.WarpCoreManual: WarpCoreManual.hasWarpCoreManual = (count > 0); break;
-            case Item.EntanglementRule: QuantumEntanglement.hasEntanglementKnowledge = (count > 0); break;
-            case Item.ShrineDoorCodes: QuantumShrineDoor.hasQuantumShrineCodes = (count > 0); break;
-            case Item.TornadoAdjustment: Tornadoes.hasTornadoKnowledge = (count > 0); break;
-            case Item.SilentRunning: Anglerfish.hasAnglerfishKnowledge = (count > 0); break;
-            case Item.ElectricalInsulation: Jellyfish.hasJellyfishKnowledge = (count > 0); break;
-            case Item.Coordinates: Coordinates.hasCoordinates = (count > 0); break;
-            case Item.Autopilot: AutopilotManager.hasAutopilot = (count > 0); break;
-            case Item.LandingCamera: LandingCamera.hasLandingCamera = (count > 0); break;
-            case Item.EjectButton: EjectButton.hasEjectButton = (count > 0); break;
-            case Item.VelocityMatcher: VelocityMatcher.hasVelocityMatcher = (count > 0); break;
-            case Item.SurfaceIntegrityScanner: SurfaceIntegrity.hasSurfaceIntegrityScanner = (count > 0); break;
-            case Item.OxygenCapacityUpgrade: SuitResources.oxygenCapacityUpgrades = count; break;
-            case Item.FuelCapacityUpgrade: SuitResources.fuelCapacityUpgrades = count; break;
-            case Item.BoostDurationUpgrade: SuitResources.boostDurationUpgrades = count; break;
-            case Item.OxygenRefill: SuitResources.oxygenRefills = count; break;
-            case Item.FuelRefill: SuitResources.fuelRefills = count; break;
-            case Item.Marshmallow: Marshmallows.normalMarshmallows = count; break;
-            case Item.PerfectMarshmallow: Marshmallows.perfectMarshmallows = count; break;
-            case Item.BurntMarshmallow: Marshmallows.burntMarshmallows = count; break;
-            case Item.ShipDamageTrap: ShipDamage.shipDamageTraps = count; break;
-            case Item.AudioTrap: AudioTrap.audioTraps = count; break;
-            case Item.NapTrap: NapTrap.napTraps = count; break;
-            case Item.SuitPunctureTrap: SuitPunctureTrap.suitPunctureTraps = count; break;
-            case Item.MapDisableTrap: MapDisableTrap.mapDisableTraps = count; break;
-            case Item.HUDCorruptionTrap: HUDCorruptionTrap.hudCorruptionTraps = count; break;
-            case Item.IcePhysicsTrap: IcePhysicsTrap.icePhysicsTraps = count; break;
-            case Item.SupernovaTrap: SupernovaTrap.supernovaTraps = count; break;
-            case Item.LightModulator: StrangerLightModulator.hasLightModulator = (count > 0); break;
-            case Item.BreachOverrideCodes: StrangerDoorCodes.hasBreachOverrideCodes = (count > 0); break;
-            case Item.RLPaintingCode: StrangerDoorCodes.hasRLPaintingCode = (count > 0); break;
-            case Item.CIPaintingCode: StrangerDoorCodes.hasCIPaintingCode = (count > 0); break;
-            case Item.HGPaintingCode: StrangerDoorCodes.hasHGPaintingCode = (count > 0); break;
-            case Item.DreamTotemPatch: SimulationTotems.hasTotemPatch = (count > 0); break;
-            case Item.RaftDocksPatch: SimulationDocks.hasDocksPatch = (count > 0); break;
-            case Item.LimboWarpPatch: SimulationGlitches.hasLimboWarpPatch = (count > 0); break;
-            case Item.ProjectionRangePatch: SimulationGlitches.hasProjectionRangePatch = (count > 0); break;
-            case Item.AlarmBypassPatch: SimulationGlitches.hasAlarmBypassPatch = (count > 0); break;
-            case Item.MemoryCubeInterface: MemoryCubeInterface.hasMemoryCubeInterface = (count > 0); break;
-            case Item.MagistariumLibraryAccessCode: MagistariumAccessCodes.hasLibraryAccess = (count > 0); break;
-            case Item.MagistariumDormitoryAccessCode: MagistariumAccessCodes.hasDormitoriesAccess = (count > 0); break;
-            case Item.MagistariumEngineAccessCode: MagistariumAccessCodes.hasEngineAccess = (count > 0); break;
-            case Item.ExpandedDictionary: ExpandedDictionary.hasExpandedDictionary = (count > 0); break;
-            case Item.ThermalInsulation: ThermalInsulation.hasThermalInsulation = (count > 0); break;
-            case Item.TamingTechniques: TamingTechniques.HasTamingTechniques = (count > 0); break;
-            case Item.CrystalRepairManual: CrystalManual.HasCrystalManual = (count > 0); break;
-            case Item.ProbabilityRule: QuantumProbability.hasProbabilityKnowledge = (count > 0); break;
-            case Item.DeepBrambleCoordinates: DeepBrambleCoordinates.HasDeepBrambleCoordinates = (count > 0); break;
-            case Item.Threader: Threader.hasThreader = (count > 0); break;
-            case Item.SignalShip: ShipEnhancementItems.hasSignalShip = (count > 0); break;
-            case Item.PortableCampfire: ShipEnhancementItems.hasPortableCampfire = (count > 0); break;
-            case Item.PortableTractorBeam: ShipEnhancementItems.hasPortableTractorBeam = (count > 0); break;
-            case Item.PortableFuelCanister: ShipEnhancementItems.hasPortableFuelCanister = (count > 0); break;
-            case Item.RepairWrench: ShipEnhancementItems.hasRepairWrench = (count > 0); break;
-            case Item.Tether: ShipEnhancementItems.hasTether = (count > 0); break;
-            case Item.ResourcePump: ShipEnhancementItems.hasResourcePump = (count > 0); break;
-            case Item.GravityLandingGear: ShipEnhancementItems.hasGravityLandingGear = (count > 0); break;
-            case Item.ThrustModulator: ShipEnhancementItems.hasThrustModulator = (count > 0); break;
-            case Item.ShipLights: ShipEnhancementItems.hasShipLights = (count > 0); break;
-            case Item.GravityCrystal: ShipEnhancementItems.gravityCrystalLevel = count; break;
-            case Item.Headlights: ShipEnhancementItems.headlightsLevel = count; break;
-            case Item.DamageIndicators: ShipEnhancementItems.hasDamageIndicators = (count > 0); break;
-            case Item.Seatbelt: ShipEnhancementItems.hasSeatbelt = (count > 0); break;
-            case Item.Medkit: ShipEnhancementItems.hasMedkit = (count > 0); break;
-            case Item.Hatch: ShipEnhancementItems.hasHatch = (count > 0); break;
-            case Item.ShipTractorBeam: ShipEnhancementItems.hasShipTractorBeam = (count > 0); break;
-            case Item.ShipOxygenCapacityUpgrade: ShipEnhancementItems.shipOxygenCapacityUpgrades = count; break;
-            case Item.ShipFuelCapacityUpgrade: ShipEnhancementItems.shipFuelCapacityUpgrades = count; break;
-            case Item.HullReinforcement: ShipEnhancementItems.hasHullReinforcement = (count > 0); break;
-            case Item.LessBrokenShip: ShipEnhancementItems.lessBrokenShipLevel = count; break;
-            case Item.AutomaticShipOxygenIntake: ShipEnhancementItems.hasAutomaticShipOxygenIntake = (count > 0); break;
-            case Item.MinimapMarkers: ShipEnhancementItems.hasMinimapMarkers = (count > 0); break;
-            case Item.ExpeditionFlag: ShipEnhancementItems.hasExpeditionFlag = (count > 0); break;
-            case Item.Radio: ShipEnhancementItems.hasRadio = (count > 0); break;
-            case Item.Clock: ShipEnhancementItems.hasClock = (count > 0); break;
-            case Item.Ernesto: ShipEnhancementItems.hasErnesto = (count > 0); break;
-
-            // for backwards-compatibility
-            case Item.Spaceship: break; case Item.Nothing: break;
-            default:
-                APRandomizer.OWMLModConsole.WriteLine($"unknown item: {item}", OWML.Common.MessageType.Error);
-                break;
+            ShipEnhancementItems.SetItemCount(item, count);
+            return;
         }
+
+            switch (item)
+            {
+                case Item.LaunchCodes: LaunchCodes.hasLaunchCodes = (count > 0); break;
+                case Item.Spacesuit: Spacesuit.hasSpacesuit = (count > 0); break;
+                case Item.Translator: Translator.hasRegularTranslator = (count > 0); break;
+                case Item.TranslatorHGT: Translator.hasHGTTranslator = (count > 0); break;
+                case Item.TranslatorTH: Translator.hasTHTranslator = (count > 0); break;
+                case Item.TranslatorBH: Translator.hasBHTranslator = (count > 0); break;
+                case Item.TranslatorGD: Translator.hasGDTranslator = (count > 0); break;
+                case Item.TranslatorDB: Translator.hasDBTranslator = (count > 0); break;
+                case Item.TranslatorOther: Translator.hasOtherTranslator = (count > 0); break;
+                case Item.TranslatorDeepB: Translator.hasDeepBTranslator = (count > 0); break;
+                case Item.Signalscope: SignalscopeManager.hasSignalscope = (count > 0); break;
+                case Item.Scout: Scout.hasScout = (count > 0); break;
+                case Item.CameraGM: GhostMatterWavelength.hasGhostMatterKnowledge = (count > 0); break;
+                case Item.CameraQuantum: QuantumImaging.hasImagingKnowledge = (count > 0); break;
+                case Item.WarpPlatformCodes: WarpPlatforms.hasNomaiWarpCodes = (count > 0); break;
+                case Item.WarpCoreManual: WarpCoreManual.hasWarpCoreManual = (count > 0); break;
+                case Item.EntanglementRule: QuantumEntanglement.hasEntanglementKnowledge = (count > 0); break;
+                case Item.ShrineDoorCodes: QuantumShrineDoor.hasQuantumShrineCodes = (count > 0); break;
+                case Item.TornadoAdjustment: Tornadoes.hasTornadoKnowledge = (count > 0); break;
+                case Item.SilentRunning: Anglerfish.hasAnglerfishKnowledge = (count > 0); break;
+                case Item.ElectricalInsulation: Jellyfish.hasJellyfishKnowledge = (count > 0); break;
+                case Item.Coordinates: Coordinates.hasCoordinates = (count > 0); break;
+                case Item.Autopilot: AutopilotManager.hasAutopilot = (count > 0); break;
+                case Item.LandingCamera: LandingCamera.hasLandingCamera = (count > 0); break;
+                case Item.EjectButton: EjectButton.hasEjectButton = (count > 0); break;
+                case Item.VelocityMatcher: VelocityMatcher.hasVelocityMatcher = (count > 0); break;
+                case Item.SurfaceIntegrityScanner: SurfaceIntegrity.hasSurfaceIntegrityScanner = (count > 0); break;
+                case Item.OxygenCapacityUpgrade: SuitResources.oxygenCapacityUpgrades = count; break;
+                case Item.FuelCapacityUpgrade: SuitResources.fuelCapacityUpgrades = count; break;
+                case Item.BoostDurationUpgrade: SuitResources.boostDurationUpgrades = count; break;
+                case Item.OxygenRefill: SuitResources.oxygenRefills = count; break;
+                case Item.FuelRefill: SuitResources.fuelRefills = count; break;
+                case Item.Marshmallow: Marshmallows.normalMarshmallows = count; break;
+                case Item.PerfectMarshmallow: Marshmallows.perfectMarshmallows = count; break;
+                case Item.BurntMarshmallow: Marshmallows.burntMarshmallows = count; break;
+                case Item.ShipDamageTrap: ShipDamage.shipDamageTraps = count; break;
+                case Item.AudioTrap: AudioTrap.audioTraps = count; break;
+                case Item.NapTrap: NapTrap.napTraps = count; break;
+                case Item.SuitPunctureTrap: SuitPunctureTrap.suitPunctureTraps = count; break;
+                case Item.MapDisableTrap: MapDisableTrap.mapDisableTraps = count; break;
+                case Item.HUDCorruptionTrap: HUDCorruptionTrap.hudCorruptionTraps = count; break;
+                case Item.IcePhysicsTrap: IcePhysicsTrap.icePhysicsTraps = count; break;
+                case Item.SupernovaTrap: SupernovaTrap.supernovaTraps = count; break;
+                case Item.LightModulator: StrangerLightModulator.hasLightModulator = (count > 0); break;
+                case Item.BreachOverrideCodes: StrangerDoorCodes.hasBreachOverrideCodes = (count > 0); break;
+                case Item.RLPaintingCode: StrangerDoorCodes.hasRLPaintingCode = (count > 0); break;
+                case Item.CIPaintingCode: StrangerDoorCodes.hasCIPaintingCode = (count > 0); break;
+                case Item.HGPaintingCode: StrangerDoorCodes.hasHGPaintingCode = (count > 0); break;
+                case Item.DreamTotemPatch: SimulationTotems.hasTotemPatch = (count > 0); break;
+                case Item.RaftDocksPatch: SimulationDocks.hasDocksPatch = (count > 0); break;
+                case Item.LimboWarpPatch: SimulationGlitches.hasLimboWarpPatch = (count > 0); break;
+                case Item.ProjectionRangePatch: SimulationGlitches.hasProjectionRangePatch = (count > 0); break;
+                case Item.AlarmBypassPatch: SimulationGlitches.hasAlarmBypassPatch = (count > 0); break;
+                case Item.MemoryCubeInterface: MemoryCubeInterface.hasMemoryCubeInterface = (count > 0); break;
+                case Item.MagistariumLibraryAccessCode: MagistariumAccessCodes.hasLibraryAccess = (count > 0); break;
+                case Item.MagistariumDormitoryAccessCode: MagistariumAccessCodes.hasDormitoriesAccess = (count > 0); break;
+                case Item.MagistariumEngineAccessCode: MagistariumAccessCodes.hasEngineAccess = (count > 0); break;
+                case Item.ExpandedDictionary: ExpandedDictionary.hasExpandedDictionary = (count > 0); break;
+                case Item.ThermalInsulation: ThermalInsulation.hasThermalInsulation = (count > 0); break;
+                case Item.TamingTechniques: TamingTechniques.HasTamingTechniques = (count > 0); break;
+                case Item.CrystalRepairManual: CrystalManual.HasCrystalManual = (count > 0); break;
+                case Item.ProbabilityRule: QuantumProbability.hasProbabilityKnowledge = (count > 0); break;
+                case Item.DeepBrambleCoordinates: DeepBrambleCoordinates.HasDeepBrambleCoordinates = (count > 0); break;
+                case Item.Threader: Threader.hasThreader = (count > 0); break;
+
+                // for backwards-compatibility
+            case Item.Spaceship: break; case Item.Nothing: break;
+                default:
+                    APRandomizer.OWMLModConsole.WriteLine($"unknown item: {item}", OWML.Common.MessageType.Error);
+                    break;
+            }
     }
 
 
